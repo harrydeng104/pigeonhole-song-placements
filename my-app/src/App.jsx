@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 function App() {
     return (
       <header className="text-center p-2">
-          <h1 className="text-4xl font-bold">Pigeonhole Song Placements</h1>
+          <h1 className="text-4xl font-semibold">Pigeonhole Song Placements</h1>
       </header>
     )
 }
