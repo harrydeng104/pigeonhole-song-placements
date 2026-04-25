@@ -34,8 +34,8 @@ function App() {
 
     return (
         <>
+            <div className="font-semibold text-2xl text-center p-3 bg-green-200">Songs Ranked: {compSongs.length}</div>
             <Navbar />
-            <h1>Songs Ranked: {compSongs.length}</h1>
             <div>
                 <Routes>
                     <Route path="/" element={<Home />} />
