@@ -19,14 +19,24 @@ function App() {
     useEffect(() => {
         const loadSongs = async () => {
             const querySnapshot = await getDocs(collection(db, 'songs'))
-            const loadedSongs = querySnapshot.docs.map(doc => doc.data())
+            
+            const loadedSongs = querySnapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+
             setSongs(loadedSongs)
         }
         loadSongs()
 
         const loadLogs = async () => {
             const querySnapshot = await getDocs(collection(db, 'logs'))
-            const loadedLogs = querySnapshot.docs.map(doc => doc.data())
+            
+            const loadedLogs = querySnapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+
             setLogs(loadedLogs)
         }
         loadLogs()
@@ -38,7 +48,7 @@ function App() {
             <Navbar />
             <div>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home logs = {logs}/>} />
                     <Route path="/list" element={<List />} />
                     <Route path="/about" element={<About />} />
                 </Routes>

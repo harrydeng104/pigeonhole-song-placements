@@ -4,7 +4,7 @@ import clsx from 'clsx'
 export default function Navbar() {
     return (
       <nav className="bg-amber-100 flex items-center justify-between p-1">
-        <Link className="text-4xl font-bold" to="/">Pigeonhole Song Placements</Link>
+        <Link className="text-4xl font-bold p-3" to="/">Pigeonhole Song Placements</Link>
         <ul className="flex gap-4">
             <CustomLink to="/list">The List</CustomLink>
             <CustomLink to="/about">About</CustomLink>
