@@ -1,10 +1,10 @@
 export default function Home({ logs = [] }) {
+    const sortedLogs = logs.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+
     return (
         <>
-            <h1>Home</h1>
-            <div>Link to List, Link to About</div>
-            <ul className="">
-                {logs.map((log) => 
+            <ul className="bg-gray-300 m-10">
+                {sortedLogs.map((log) => 
                     <li 
                         key = {log.id}
                         className="p-1 flex items-center hover:bg-gray-200"
