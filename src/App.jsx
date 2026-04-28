@@ -5,8 +5,8 @@ import List from "./pages/List"
 import About from "./pages/About"
 import { Route, Routes } from 'react-router-dom'
 
-import { collection, getDocs, doc } from 'firebase/firestore'
-import { db, auth } from './firebase'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from './firebase'
 
 function App() {
     const [songs, setSongs] = useState([])
