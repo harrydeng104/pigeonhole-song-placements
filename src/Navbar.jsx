@@ -3,8 +3,7 @@ import clsx from 'clsx'
 
 export default function Navbar() {
     return (
-      <nav className="bg-amber-100 flex items-center justify-between p-1">
-        <Link className="text-4xl font-bold p-3" to="/">Pigeonhole Song Placements</Link>
+      <nav className="bg-[#27343c] flex items-center justify-between p-1 text-[#dbe0e3]">
         <ul className="flex gap-4">
             <CustomLink to="/list">The List</CustomLink>
             <CustomLink to="/about">About</CustomLink>

@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import Home from "./pages/Home"
 import List from "./pages/List"
 import About from "./pages/About"
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Link } from 'react-router-dom'
 
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from './firebase'
@@ -44,15 +44,28 @@ function App() {
 
     return (
         <>
-            <div className="font-semibold text-2xl text-center p-3 bg-green-200">Songs Ranked: {compSongs.length}</div>
+            <header className="bg-[#404b5d] p-2 text-center">
+                <Link className="text-4xl font-bold p-3 text-[#daa654]" to="/">PIGEONHOLE</Link>
+            </header>
+
             <Navbar />
-            <div>
+
+            <body className='bg-[#dbe0e3]'>
                 <Routes>
-                    <Route path="/" element={<Home logs = {logs}/>} />
+                    <Route path="/" element={
+                        <Home 
+                            songs = {compSongs} 
+                            logs = {logs}
+                        />
+                    } />
                     <Route path="/list" element={<List songs = {compSongs}/>} />
                     <Route path="/about" element={<About />} />
                 </Routes>
-            </div>
+            </body>
+
+            <footer className="bg-[#fe7461]">
+                hi
+            </footer>
         </>
     )
 }
