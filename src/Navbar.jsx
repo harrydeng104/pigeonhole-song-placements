@@ -5,8 +5,8 @@ export default function Navbar() {
     return (
       <nav className="bg-[#27343c] flex items-center justify-between p-1 text-[#dbe0e3]">
         <ul className="flex gap-4">
-            <CustomLink to="/list">The List</CustomLink>
-            <CustomLink to="/about">About</CustomLink>
+            <CustomLink className="font-semibold text-xl p-2" to="/list">The List</CustomLink>
+            <CustomLink className="font-semibold text-xl p-2" to="/about">About</CustomLink>
         </ul>
       </nav>
     )
@@ -18,9 +18,10 @@ function CustomLink ({to, children, ...props}) {
     return (
         <li 
             className={clsx(
-                "hover:bg-amber-600",
+                "hover:bg-amber-600 rounded-xl",
                 {
-                    'bg-amber-400': isActive
+                    'bg-amber-400': isActive,
+                    'text-black': isActive
                 }
             )} 
         >

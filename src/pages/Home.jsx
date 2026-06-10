@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 export default function Home({ logs = [], songs }) {
     const sortedLogs = logs.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
 
@@ -7,8 +9,13 @@ export default function Home({ logs = [], songs }) {
             <ul className="bg-gray-300 m-10">
                 {sortedLogs.map((log) => 
                     <li 
-                        key = {log.id}
-                        className="p-1 flex items-center hover:bg-gray-200"
+                        key={`${log.timestamp}_${log.songId}`}
+                        className={clsx(
+                            "p-1 flex items-center hover:bg-gray-200",
+                            {
+                                'bg-amber-100': log.action === "completed"
+                            }
+                        )}
                     >
                         <span>{log.timestamp}: {log.songName} by {log.artists} was {log.action} to have a total score of {log.scores.total}</span>
                     </li>
